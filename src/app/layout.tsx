@@ -1,6 +1,7 @@
 import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
 import Providers from '@/components/providers'
+import CustomToaster from '@/components/ui/toaster'
 import { cn } from '@/lib/utils'
 import '@/styles/globals.css'
 import { Inter } from 'next/font/google'
@@ -26,7 +27,7 @@ export default function RootLayout({
         <Providers>
           
           {children}
-          {/* <Toaster position='bottom-right'/> */}
+          <CustomToaster position={"bottom-right"} />
           {/* @ts-expect-error Server Component */}
           <Navbar/>
         </Providers>

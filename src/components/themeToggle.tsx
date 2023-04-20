@@ -6,6 +6,8 @@ import Button from './ui/button';
 import { Moon, Sun } from 'lucide-react';
 import Icons from './icons';
 import { DropdownMenu, DropdownMenuTrigger } from '@radix-ui/react-dropdown-menu';
+import useHasMounted from '@/lib/hasMounted';
+import hasMounted from '@/lib/hasMounted';
 
 export interface ThemeToggleProps {
 }
@@ -28,7 +30,7 @@ const ThemeToggle: FC<ThemeToggleProps> = () => {
   return (
       <Button variant={"ghost"} size={"sm"} onClick={changeTheme}>
       {
-        isLightTheme ? (
+        useHasMounted() && isLightTheme ? (
         <Icons.Sun className='rotate-0 scale-100 transition-all hover:text-slate-900 dark:-rotate-90 dark:scale-0 dark:text-slate-400 dark:hover:text-slate-100'/>
           
         ) : (
