@@ -2,9 +2,10 @@ import { getServerSession } from 'next-auth';
 import Link from 'next/link';
 import React, { FC, useEffect, useState } from 'react';
 import { buttonVariants } from './ui/button';
-import SignInButton from './signInButton';
 import SignOutButton from './signOutButton';
 import ThemeToggle from './themeToggle';
+import LogInButton from './logInButton';
+import SignUpButton from './signUpButton';
 
 export interface NavbarProps {
     height: number;
@@ -27,10 +28,6 @@ const Navbar = async ({ }) => {
 
                 {<div className='hidden md:flex gap-4'>
                     <ThemeToggle />
-                    <Link href={"/documentation"} className={buttonVariants({ variant: "ghost" })}>
-                        Documentation
-                    </Link>
-
                     {session ? (
                         <>
                             <Link className={buttonVariants({ variant: "ghost" })}
@@ -39,7 +36,19 @@ const Navbar = async ({ }) => {
                             </Link>
                             <SignOutButton />
                         </>
-                    ) : <SignInButton />}
+                    ) : 
+                    <>
+                        <Link className={buttonVariants({ variant: "ghost" })}
+                            href={"/signup"}>
+                            Sign Up
+                        </Link>
+                        <Link className={buttonVariants({ variant: 'gradientOutline' })}
+                            href={"/login"}>
+                            Log In
+                        </Link>
+                    </>
+                    
+                    }
                 </div>}
             </div>
         </div>

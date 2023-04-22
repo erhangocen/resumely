@@ -1,5 +1,4 @@
 "use client"
-
 import React, { FC, useState } from 'react';
 import Button from './ui/button';
 import { signIn } from 'next-auth/react';
@@ -8,13 +7,13 @@ import showToast from './ui/toast';
 
 
 
-interface SignInButtonProps {}
+interface SignUpButtonProps {}
 
-const SignInButton: FC<SignInButtonProps> = ({}) => {
+const SignUpButton: FC<SignUpButtonProps> = ({}) => {
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
-    const signInWithGoogle =async () => {
+    const signUpWithGoogle =async () => {
         setIsLoading(true);
         try{
             /* await signIn("google"); */
@@ -27,10 +26,10 @@ const SignInButton: FC<SignInButtonProps> = ({}) => {
     }
 
     return (
-        <Button onClick={signInWithGoogle} isLoading={isLoading}>
-            Sign In
+        <Button onClick={signUpWithGoogle} isLoading={isLoading} variant={'ghost'}>
+            Sign Up
         </Button>
     );
 };
 
-export default SignInButton;
+export default SignUpButton;
