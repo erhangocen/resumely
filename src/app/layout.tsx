@@ -5,6 +5,7 @@ import CustomToaster from '@/components/ui/toaster'
 import { cn } from '@/lib/utils'
 import '@/styles/globals.css'
 import { Inter } from 'next/font/google'
+import { ParallaxProvider } from 'react-scroll-parallax'
 
 export const metadata = {
   title: 'Create Next App',

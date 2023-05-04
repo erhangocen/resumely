@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
 import { Loader2, LucideIcon, User } from "lucide-react";
 import { InputHTMLAttributes, FC, forwardRef, ReactNode } from "react";
+import { FieldValue, FieldValues, RegisterOptions, useForm, UseFormRegister, UseFormRegisterReturn } from "react-hook-form";
 
 
 export const textFieldVariants = cva("",
@@ -28,12 +29,13 @@ export const textFieldVariants = cva("",
 interface InputProps extends InputHTMLAttributes<HTMLInputElement>,
 VariantProps<typeof textFieldVariants> {
     icon:ReactNode,
-    label:String
+    label:string,
 }
 
 const TextField: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(({
     className, icon, label, variant, scaleFactor, ...props
 },ref) => {
+
   return (
     <>
         <input 
